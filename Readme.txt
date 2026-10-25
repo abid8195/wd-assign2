@@ -76,8 +76,6 @@ the array, and the navigation shows a count badge. The list stays when moving be
 
 KNOWN ISSUES AND LIMITATIONS
 ----------------------------
-- The booking form action is the address given in the brief (it000000). Change "it000000"
-  to the student login if the marker's Mercury account differs.
 - Registration and recommendations are front-end only; nothing is stored on a server.
 - Session times are fixed per movie and the same every day; no seat selection.
 - The watchlist uses localStorage, so it is per browser and is cleared if site data is cleared.
