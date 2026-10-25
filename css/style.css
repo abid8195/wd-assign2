@@ -1,0 +1,572 @@
+/* ==========================================================================
+   CineSwin - style.css
+   COS10005 Web Development, Assignment 2
+   Author: Abid Us Sobhan (s103802241)
+
+   Contents
+   1. Design tokens (colours, spacing)
+   2. Base and typography
+   3. Layout helpers
+   4. Header and navigation
+   5. Hero and page titles
+   6. Cards and grids
+   7. Buttons
+   8. Forms
+   9. Footer
+   10. Responsive: tablet (768-1023px)
+   11. Responsive: mobile (767px and below)
+   ========================================================================== */
+
+/* 1. DESIGN TOKENS ------------------------------------------------------- */
+:root {
+  --bg: #0f1220;          /* page background */
+  --surface: #181c30;     /* cards and form panels */
+  --surface-2: #20253d;   /* bands and inputs */
+  --text: #f2f3f8;        /* main text, 15:1 contrast on --bg */
+  --muted: #c3c7da;       /* secondary text, 10:1 contrast on --bg */
+  --accent: #f5b942;      /* gold highlights and buttons */
+  --accent-dark: #1a1a1a; /* text on accent buttons */
+  --danger: #ff9b9b;      /* error text, 9:1 contrast on --bg */
+  --success: #8fe3a5;
+  --border: #3a4163;
+  --radius: 12px;
+}
+
+/* 2. BASE AND TYPOGRAPHY ------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.0625rem;   /* 17px */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: #ffd886;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Visible keyboard focus for every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-dark);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* 3. LAYOUT HELPERS ------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.narrow {
+  max-width: 760px;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.band {
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+/* 4. HEADER AND NAVIGATION ----------------------------------------------- */
+.site-header {
+  background: #0a0c17;
+  border-bottom: 3px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-list a:hover {
+  background: var(--surface-2);
+}
+
+/* Current page highlight */
+.nav-list a.current {
+  background: var(--accent);
+  color: var(--accent-dark);
+}
+
+.badge {
+  display: inline-block;
+  min-width: 1.5em;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* 5. HERO AND PAGE TITLES ------------------------------------------------ */
+.hero {
+  background: linear-gradient(135deg, #1c1440 0%, #0f1220 70%);
+  padding: 48px 0;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-figure {
+  margin: 0;
+}
+
+.hero-figure img {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.page-title {
+  background: linear-gradient(135deg, #1c1440 0%, #0f1220 80%);
+  padding: 36px 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 6. CARDS AND GRIDS ----------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pad {
+  padding: 20px;
+}
+
+.card-body {
+  padding: 16px 20px 20px;
+}
+
+/* Movie listing: poster on the left, details on the right */
+.movie-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.year {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.facts {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  font-size: 0.97rem;
+}
+
+.label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.rating {
+  display: inline-block;
+  padding: 0 8px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+}
+
+.price {
+  font-size: 1.05rem;
+}
+
+.sessions,
+.meta {
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.mini-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.reasons {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 0.97rem;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.chips li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+/* 7. BUTTONS ------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-dark);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ffd886;
+  border-color: #ffd886;
+  color: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2);
+  color: #ffd886;
+  border-color: #ffd886;
+}
+
+/* 8. FORMS --------------------------------------------------------------- */
+.field {
+  margin-bottom: 20px;
+  border: 0;
+  padding: 0;
+}
+
+.field.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px 4px;
+  margin: 0 0 24px;
+}
+
+.group legend {
+  color: var(--accent);
+  font-size: 1.15rem;
+  padding: 0 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+input[readonly] {
+  opacity: 0.8;
+}
+
+label.inline {
+  display: inline-block;
+  font-weight: 400;
+  margin-right: 18px;
+}
+
+label.inline input {
+  margin-right: 6px;
+  accent-color: var(--accent);
+}
+
+.hint {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.error {
+  display: block;
+  color: var(--danger);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.error:empty {
+  display: none;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: var(--danger);
+}
+
+.error-summary {
+  background: #3a1620;
+  border: 2px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  color: #ffd6d6;
+}
+
+.error-summary ul {
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.success {
+  background: #12331f;
+  border: 2px solid var(--success);
+  color: var(--success);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  font-weight: 700;
+}
+
+.total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+output {
+  font-weight: 700;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 9. FOOTER -------------------------------------------------------------- */
+.site-footer {
+  background: #0a0c17;
+  border-top: 3px solid var(--accent);
+  padding: 24px 0;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin-bottom: 0.5em;
+}
+
+/* 10. TABLET: 768px - 1023px --------------------------------------------- */
+@media (max-width: 1023px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  h1 { font-size: 2.1rem; }
+}
+
+/* 11. MOBILE: 767px and below -------------------------------------------- */
+@media (max-width: 767px) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.45rem; }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list a {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+  }
+
+  .site-header { position: static; }
+
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .chips,
+  .field.two {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    max-height: 420px;
+    object-position: top;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  label.inline {
+    display: block;
+    margin-bottom: 8px;
+  }
+}

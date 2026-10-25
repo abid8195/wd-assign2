@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse all movies now showing at CineSwin with genre, rating, running time, price and session times.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Movies | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html" class="current" aria-current="page">Movies</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="booking.html">Book Tickets</a></li>
+          <li><a href="watchlist.html">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Now Showing</h1>
+        <p class="lead">Eleven films across action, crime, drama, sci-fi, comedy, animation and family. Select <em>Book Tickets</em> to carry a movie straight to the booking form, or save it to your watchlist.</p>
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="list-h">
+      <h2 id="list-h">All movies</h2>
+      <div class="grid grid-2">
+        <article class="card movie-card" id="inception">
+          <img src="images/movie1.jpg" alt="Poster for Inception, directed by Christopher Nolan" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Inception <span class="year">(2010)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Sci-Fi, Action</li>
+              <li><span class="label">Age rating:</span> <span class="rating">M</span></li>
+              <li><span class="label">Running time:</span> 148 minutes</li>
+              <li><span class="label">Director:</span> Christopher Nolan</li>
+            </ul>
+            <p>A skilled thief who steals secrets from inside people's dreams is offered a final job: plant an idea instead of taking one. Assembling a team of specialists, he descends through layered dream worlds where time slows, gravity bends and his own guilt becomes a dangerous enemy. A puzzle-box thriller with spectacular set pieces, a pulsing score and an ending that keeps audiences arguing long after the credits roll.</p>
+            <p class="price">Ticket price: <strong>$18.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 10:30 AM &middot; 2:00 PM &middot; 7:30 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=inception">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="inception" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="dark-knight">
+          <img src="images/movie2.jpg" alt="Poster for The Dark Knight, directed by Christopher Nolan" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>The Dark Knight <span class="year">(2008)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Action, Crime</li>
+              <li><span class="label">Age rating:</span> <span class="rating">M</span></li>
+              <li><span class="label">Running time:</span> 152 minutes</li>
+              <li><span class="label">Director:</span> Christopher Nolan</li>
+            </ul>
+            <p>Batman, Lieutenant Gordon and district attorney Harvey Dent set out to dismantle Gotham's organised crime, but a chaotic new criminal known as the Joker pushes the city and its protector to the brink. Heath Ledger's unforgettable performance anchors a tense, grown-up superhero crime saga about heroism, sacrifice and how far a person will bend before they break.</p>
+            <p class="price">Ticket price: <strong>$18.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 11:00 AM &middot; 3:00 PM &middot; 8:00 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=dark-knight">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="dark-knight" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="interstellar">
+          <img src="images/movie3.jpg" alt="Poster for Interstellar, directed by Christopher Nolan" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Interstellar <span class="year">(2014)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Sci-Fi, Drama</li>
+              <li><span class="label">Age rating:</span> <span class="rating">M</span></li>
+              <li><span class="label">Running time:</span> 169 minutes</li>
+              <li><span class="label">Director:</span> Christopher Nolan</li>
+            </ul>
+            <p>As crops fail and Earth slowly becomes uninhabitable, a former pilot leaves his children behind to join a daring mission through a wormhole in search of a new home for humanity. Stunning space visuals, a thunderous organ score and a deeply emotional story about love, time and survival make this an epic best enjoyed on the biggest screen possible.</p>
+            <p class="price">Ticket price: <strong>$19.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 10:00 AM &middot; 2:30 PM &middot; 7:00 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=interstellar">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="interstellar" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="oppenheimer">
+          <img src="images/movie4.jpg" alt="Poster for Oppenheimer, directed by Christopher Nolan" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Oppenheimer <span class="year">(2023)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Drama, Biography</li>
+              <li><span class="label">Age rating:</span> <span class="rating">M</span></li>
+              <li><span class="label">Running time:</span> 180 minutes</li>
+              <li><span class="label">Director:</span> Christopher Nolan</li>
+            </ul>
+            <p>The story of J. Robert Oppenheimer, the physicist who led the wartime Manhattan Project and helped create the atomic bomb. Moving between brilliant scientific breakthroughs, political intrigue and a tense security hearing, the film explores ambition, responsibility and the heavy price of changing the world. A gripping, star-filled historical drama with immersive sound design.</p>
+            <p class="price">Ticket price: <strong>$20.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 11:30 AM &middot; 3:30 PM &middot; 7:45 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=oppenheimer">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="oppenheimer" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="goodfellas">
+          <img src="images/movie5.jpg" alt="Poster for Goodfellas, directed by Martin Scorsese" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Goodfellas <span class="year">(1990)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Crime, Drama</li>
+              <li><span class="label">Age rating:</span> <span class="rating">R18+</span></li>
+              <li><span class="label">Running time:</span> 146 minutes</li>
+              <li><span class="label">Director:</span> Martin Scorsese</li>
+            </ul>
+            <p>Young Henry Hill is fascinated by the glamour of the mob and soon rises through its ranks alongside the volatile Tommy and the charming Jimmy. Years of easy money, loyalty and violence slowly give way to paranoia and betrayal. Scorsese's kinetic camera, a legendary soundtrack and sharp, funny dialogue make this one of cinema's most influential gangster films.</p>
+            <p class="price">Ticket price: <strong>$16.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 12:00 PM &middot; 4:30 PM &middot; 9:00 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=goodfellas">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="goodfellas" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="departed">
+          <img src="images/movie6.jpg" alt="Poster for The Departed, directed by Martin Scorsese" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>The Departed <span class="year">(2006)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Crime, Thriller</li>
+              <li><span class="label">Age rating:</span> <span class="rating">MA15+</span></li>
+              <li><span class="label">Running time:</span> 151 minutes</li>
+              <li><span class="label">Director:</span> Martin Scorsese</li>
+            </ul>
+            <p>In Boston, a police academy graduate goes undercover inside an Irish mob, while a gangster's protege rises through the police force as his informant. Each man races to uncover the other before their double lives collapse. Packed with twists, blistering dialogue and a powerhouse ensemble cast, this is a relentless crime thriller where nobody can be trusted.</p>
+            <p class="price">Ticket price: <strong>$16.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 1:00 PM &middot; 5:00 PM &middot; 8:30 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=departed">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="departed" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="hugo">
+          <img src="images/movie7.jpg" alt="Poster for Hugo, directed by Martin Scorsese" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Hugo <span class="year">(2011)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Adventure, Family</li>
+              <li><span class="label">Age rating:</span> <span class="rating">PG</span></li>
+              <li><span class="label">Running time:</span> 126 minutes</li>
+              <li><span class="label">Director:</span> Martin Scorsese</li>
+            </ul>
+            <p>Orphaned Hugo lives secretly inside the walls of a busy Paris train station, winding its clocks and trying to repair a mysterious mechanical man left by his father. With the help of a curious girl, he uncovers a forgotten chapter of early cinema. A warm, beautifully crafted adventure and a love letter to the magic of movies for the whole family.</p>
+            <p class="price">Ticket price: <strong>$14.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 10:00 AM &middot; 1:00 PM &middot; 4:00 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=hugo">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="hugo" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="wolf">
+          <img src="images/movie8.jpg" alt="Poster for The Wolf of Wall Street, directed by Martin Scorsese" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>The Wolf of Wall Street <span class="year">(2013)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Comedy, Crime</li>
+              <li><span class="label">Age rating:</span> <span class="rating">R18+</span></li>
+              <li><span class="label">Running time:</span> 180 minutes</li>
+              <li><span class="label">Director:</span> Martin Scorsese</li>
+            </ul>
+            <p>Based on a true story, ambitious stockbroker Jordan Belfort builds a penny-stock empire fuelled by greed, outrageous parties and shameless sales talk, until the authorities close in. Told with manic energy and pitch-black humour, this satire of excess is loud, fast and often hilarious. Strictly an adults-only comedy for friends who enjoy bold, boundary-pushing storytelling.</p>
+            <p class="price">Ticket price: <strong>$17.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 2:00 PM &middot; 6:00 PM &middot; 9:15 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=wolf">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="wolf" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="spirited-away">
+          <img src="images/movie9.jpg" alt="Poster for Spirited Away, directed by Hayao Miyazaki" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Spirited Away <span class="year">(2001)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Animation, Fantasy</li>
+              <li><span class="label">Age rating:</span> <span class="rating">PG</span></li>
+              <li><span class="label">Running time:</span> 125 minutes</li>
+              <li><span class="label">Director:</span> Hayao Miyazaki</li>
+            </ul>
+            <p>Ten-year-old Chihiro wanders into a hidden world of spirits, witches and talking creatures, where her parents have been transformed and she must work in a magical bathhouse to free them. Studio Ghibli's imaginative masterpiece is full of wonder, humour and heart, with hand-drawn animation that rewards viewers of every age.</p>
+            <p class="price">Ticket price: <strong>$13.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 10:30 AM &middot; 1:30 PM &middot; 4:30 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=spirited-away">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="spirited-away" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="paddington-2">
+          <img src="images/movie10.jpg" alt="Poster for Paddington 2, directed by Paul King" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Paddington 2 <span class="year">(2017)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Comedy, Family</li>
+              <li><span class="label">Age rating:</span> <span class="rating">G</span></li>
+              <li><span class="label">Running time:</span> 103 minutes</li>
+              <li><span class="label">Director:</span> Paul King</li>
+            </ul>
+            <p>Now settled with the Brown family in London, the polite and marmalade-loving bear Paddington takes odd jobs to buy a special pop-up book for his aunt, only to see it stolen and himself wrongly jailed. Charming, inventive and endlessly kind, this witty comedy adventure is a feel-good treat that will make children and grown-ups laugh out loud.</p>
+            <p class="price">Ticket price: <strong>$12.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 10:00 AM &middot; 12:30 PM &middot; 3:00 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=paddington-2">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="paddington-2" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+        <article class="card movie-card" id="spider-verse">
+          <img src="images/movie11.jpg" alt="Poster for Spider-Man: Into the Spider-Verse, directed by Bob Persichetti, Peter Ramsey and Rodney Rothman" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Spider-Man: Into the Spider-Verse <span class="year">(2018)</span></h3>
+            <ul class="facts">
+              <li><span class="label">Genre:</span> Animation, Action</li>
+              <li><span class="label">Age rating:</span> <span class="rating">PG</span></li>
+              <li><span class="label">Running time:</span> 117 minutes</li>
+              <li><span class="label">Director:</span> Bob Persichetti, Peter Ramsey and Rodney Rothman</li>
+            </ul>
+            <p>Teenager Miles Morales is bitten by a radioactive spider and discovers that other Spider-People from parallel dimensions have been pulled into his Brooklyn. Together they must stop a dangerous plan that could destroy reality. Bursting with comic-book style animation, a killer hip-hop soundtrack and plenty of humour and heart, it is a thrilling ride for teens and families.</p>
+            <p class="price">Ticket price: <strong>$14.00</strong> (adult)</p>
+            <p class="sessions"><span class="label">Sessions daily:</span> 11:00 AM &middot; 2:15 PM &middot; 5:30 PM</p>
+            <p class="actions">
+              <a class="btn" href="booking.html?movie=spider-verse">Book Tickets</a>
+              <button type="button" class="btn btn-secondary watch-btn" data-movie="spider-verse" aria-pressed="false">Add to Watchlist</button>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>

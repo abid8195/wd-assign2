@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your personal CineSwin movie watchlist: view, book or remove saved movies.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Watchlist | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="booking.html">Book Tickets</a></li>
+          <li><a href="watchlist.html" class="current" aria-current="page">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>My Watchlist</h1>
+        <p class="lead">Movies you saved from the listing page. Your list is kept in your browser, so it is still here when you move between pages.</p>
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="wl-h">
+      <h2 id="wl-h">Saved movies</h2>
+      <p id="watch-empty" hidden>Your watchlist is empty. Visit the <a href="movies.html">movies page</a> and choose <em>Add to Watchlist</em>.</p>
+      <div class="grid grid-3" id="watch-grid"></div>
+      <p><button type="button" class="btn btn-secondary" id="clear-watch" hidden>Clear watchlist</button></p>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>

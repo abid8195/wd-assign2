@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a free CineSwin account. This form is front-end only and validated with JavaScript.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Register | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="booking.html">Book Tickets</a></li>
+          <li><a href="watchlist.html">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html" class="current" aria-current="page">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Create an Account</h1>
+        <p class="lead">Join CineSwin to save your favourite genres. This is a front-end demo form: nothing is stored on a server.</p>
+      </div>
+    </section>
+
+    <section class="container section narrow" aria-labelledby="reg-h">
+      <h2 id="reg-h">Registration form</h2>
+      <p id="reg-success" class="success" role="status" hidden>Registration successful! Welcome to CineSwin.</p>
+      <form id="register-form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" autocomplete="username" aria-describedby="username-hint username-error">
+          <span class="hint" id="username-hint">At least 5 characters: letters, numbers and underscores only.</span>
+          <span class="error" id="username-error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+          <span class="error" id="email-error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" aria-describedby="phone-hint phone-error">
+          <span class="hint" id="phone-hint">Digits only, 8 to 15 digits.</span>
+          <span class="error" id="phone-error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="new-password" aria-describedby="password-hint password-error">
+          <span class="hint" id="password-hint">At least 10 characters with an uppercase letter, a lowercase letter, a number and a special character.</span>
+          <span class="error" id="password-error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <input type="password" id="confirm" name="confirm" autocomplete="new-password" aria-describedby="confirm-error">
+          <span class="error" id="confirm-error" role="alert"></span>
+        </div>
+
+        <fieldset class="field">
+          <legend>Gender</legend>
+          <label class="inline"><input type="radio" name="gender" value="female"> Female</label>
+          <label class="inline"><input type="radio" name="gender" value="male"> Male</label>
+          <label class="inline"><input type="radio" name="gender" value="other"> Other / prefer not to say</label>
+          <span class="error" id="gender-error" role="alert"></span>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Preferred movie genre(s)</legend>
+          <label class="inline"><input type="checkbox" name="genres" value="Action"> Action</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Comedy"> Comedy</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Animation"> Animation</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Drama"> Drama</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Sci-Fi"> Sci-Fi</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Crime"> Crime</label>
+          <label class="inline"><input type="checkbox" name="genres" value="Family"> Family</label>
+          <span class="error" id="genres-error" role="alert"></span>
+        </fieldset>
+
+        <div class="field">
+          <label for="country">Country/Region</label>
+          <select id="country" name="country" aria-describedby="country-error">
+            <option value="">Select your country&hellip;</option>
+            <option value="Australia">Australia</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Canada">Canada</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error" id="country-error" role="alert"></span>
+        </div>
+
+        <p><button type="submit" class="btn">Submit</button></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>

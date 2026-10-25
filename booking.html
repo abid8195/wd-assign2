@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Book CineSwin movie tickets: choose a movie, session, ticket type and pay by voucher or card.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Book Tickets | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="booking.html" class="current" aria-current="page">Book Tickets</a></li>
+          <li><a href="watchlist.html">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Book Your Tickets</h1>
+        <p class="lead">Pick a movie and session, choose your ticket type and pay by voucher or online. Use test card details only &ndash; no real payment is processed.</p>
+      </div>
+    </section>
+
+    <section class="container section narrow" aria-labelledby="book-h">
+      <h2 id="book-h">Booking form</h2>
+      <div id="form-summary" class="error-summary" role="alert" hidden></div>
+      <form id="booking-form" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" method="post" novalidate>
+
+        <fieldset class="group">
+          <legend>Your details</legend>
+          <div class="field">
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" name="fullname" autocomplete="name" aria-describedby="fullname-error">
+            <span class="error" id="fullname-error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+            <span class="error" id="email-error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" aria-describedby="phone-hint phone-error">
+            <span class="hint" id="phone-hint">At least 10 digits.</span>
+            <span class="error" id="phone-error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Movie and session</legend>
+          <div class="field">
+            <label for="movie">Movie selection</label>
+            <select id="movie" name="movie" aria-describedby="movie-error">
+              <option value="">Select a movie&hellip;</option>
+            </select>
+            <span class="error" id="movie-error" role="alert"></span>
+          </div>
+          <div class="field two">
+            <div>
+              <label for="date">Screening date</label>
+              <input type="date" id="date" name="date" aria-describedby="date-error">
+              <span class="error" id="date-error" role="alert"></span>
+            </div>
+            <div>
+              <label for="time">Screening time</label>
+              <select id="time" name="time" aria-describedby="time-error">
+                <option value="">Select a movie first</option>
+              </select>
+              <span class="error" id="time-error" role="alert"></span>
+            </div>
+          </div>
+          <div class="field two">
+            <div>
+              <label for="tickets">Number of tickets</label>
+              <input type="number" id="tickets" name="tickets" min="1" max="20" value="1" aria-describedby="tickets-error">
+              <span class="error" id="tickets-error" role="alert"></span>
+            </div>
+            <div>
+              <label for="tickettype">Ticket type</label>
+              <select id="tickettype" name="tickettype">
+                <option value="adult">Adult (full price)</option>
+                <option value="student">Student (20% off)</option>
+                <option value="child">Child (40% off)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="requests">Special requests <span class="optional">(optional)</span></label>
+            <textarea id="requests" name="requests" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Cost</legend>
+          <p>Price per ticket: <output id="unit-price" for="movie tickettype">$0.00</output></p>
+          <p class="total">Booking cost: <output id="total-price" for="movie tickets tickettype">$0.00</output></p>
+          <input type="hidden" id="cost" name="cost" value="0.00">
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Payment</legend>
+          <fieldset class="field">
+            <legend>Payment method</legend>
+            <label class="inline"><input type="radio" name="payment" value="voucher"> Voucher</label>
+            <label class="inline"><input type="radio" name="payment" value="online"> Online payment</label>
+            <span class="error" id="payment-error" role="alert"></span>
+          </fieldset>
+
+          <!-- shown only when Voucher is selected -->
+          <div id="voucher-box" hidden>
+            <div class="field">
+              <label for="voucher">Voucher code</label>
+              <input type="text" id="voucher" name="voucher" inputmode="numeric" maxlength="12" autocomplete="off" disabled aria-describedby="voucher-hint voucher-error">
+              <span class="hint" id="voucher-hint">12 digits.</span>
+              <span class="error" id="voucher-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- shown only when Online payment is selected -->
+          <div id="card-box" hidden>
+            <div class="field">
+              <label for="cardtype">Card type</label>
+              <select id="cardtype" name="cardtype" disabled>
+                <option value="visa">Visa (16 digits)</option>
+                <option value="mastercard">Mastercard (16 digits)</option>
+                <option value="amex">American Express (15 digits)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cardnumber">Card number</label>
+              <input type="text" id="cardnumber" name="cardnumber" inputmode="numeric" maxlength="16" autocomplete="off" disabled aria-describedby="card-hint cardnumber-error">
+              <span class="hint" id="card-hint">Use a fake test number. Digits only, no spaces.</span>
+              <span class="error" id="cardnumber-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="billing">Billing email address</label>
+            <input type="email" id="billing" name="billing" autocomplete="email" aria-describedby="billing-error">
+            <label class="inline"><input type="checkbox" id="same-email"> Same as email address</label>
+            <span class="error" id="billing-error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <p><button type="submit" class="btn">Confirm Booking</button></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CineSwin is a movie discovery and ticket booking platform: browse films, get recommendations and book tickets online.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Home | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="current" aria-current="page">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="booking.html">Book Tickets</a></li>
+          <li><a href="watchlist.html">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- hero banner -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Find the perfect movie. Book in minutes.</h1>
+          <p class="lead">CineSwin helps you discover great films, get recommendations that match your mood and book tickets without the queue.</p>
+          <p>
+            <a class="btn" href="movies.html">Browse Movies</a>
+            <a class="btn btn-secondary" href="recommend.html">Get a Recommendation</a>
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="images/hero.jpg" alt="Illustration of a cinema screen glowing above rows of red seats" width="1600" height="700">
+          <figcaption>Image: original artwork created for this project (see Readme.txt).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- purpose and values -->
+    <section class="container section" aria-labelledby="values-h">
+      <h2 id="values-h">Why CineSwin?</h2>
+      <p>CineSwin is a student-built movie discovery and ticket booking platform. Our purpose is simple: make going to the movies easy, affordable and fun for everyone. We are guided by four values.</p>
+      <div class="grid grid-4">
+        <article class="card pad"><h3>Convenience</h3><p>Compare sessions and prices, then book from your phone or laptop in a single form.</p></article>
+        <article class="card pad"><h3>Variety</h3><p>From crime classics and sci-fi epics to animation and family comedies, there is something for every taste.</p></article>
+        <article class="card pad"><h3>Accessibility</h3><p>A clear layout, readable text and keyboard-friendly forms that work on any screen size.</p></article>
+        <article class="card pad"><h3>Entertainment</h3><p>Hand-picked films, including masterpieces from Christopher Nolan and Martin Scorsese.</p></article>
+      </div>
+    </section>
+
+    <!-- target users -->
+    <section class="band" aria-labelledby="users-h">
+      <div class="container section">
+        <h2 id="users-h">Who is it for?</h2>
+        <ul class="chips">
+          <li><strong>Families</strong> &ndash; G and PG picks everyone can enjoy together.</li>
+          <li><strong>Couples</strong> &ndash; thoughtful, engaging films for date night.</li>
+          <li><strong>Students</strong> &ndash; discounted student tickets and late sessions.</li>
+          <li><strong>Movie enthusiasts</strong> &ndash; director-led collections and classics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section class="container section" aria-labelledby="services-h">
+      <h2 id="services-h">What we offer</h2>
+      <div class="grid grid-3">
+        <article class="card pad"><h3>Movie discovery</h3><p>Browse every film with its genre, age rating, running time, price and session times. <a href="movies.html">See all movies</a>.</p></article>
+        <article class="card pad"><h3>Smart recommendations</h3><p>Tell us your favourite genre, age group and who you are watching with, and we will suggest the best matches. <a href="recommend.html">Try it</a>.</p></article>
+        <article class="card pad"><h3>Easy ticket booking</h3><p>Choose a session, ticket type and payment method (voucher or card) in one simple form. <a href="booking.html">Book tickets</a>.</p></article>
+      </div>
+    </section>
+
+    <!-- featured movies -->
+    <section class="container section" aria-labelledby="featured-h">
+      <h2 id="featured-h">Featured this week</h2>
+      <div class="grid grid-3">
+        <article class="card mini-card">
+          <img src="images/movie1.jpg" alt="Poster for Inception" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Inception</h3>
+            <p class="meta">Sci-Fi / Action &middot; M</p>
+            <a class="btn" href="booking.html?movie=inception">Book Now</a>
+          </div>
+        </article>
+        <article class="card mini-card">
+          <img src="images/movie5.jpg" alt="Poster for Goodfellas" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Goodfellas</h3>
+            <p class="meta">Crime / Drama &middot; R18+</p>
+            <a class="btn" href="booking.html?movie=goodfellas">Book Now</a>
+          </div>
+        </article>
+        <article class="card mini-card">
+          <img src="images/movie9.jpg" alt="Poster for Spirited Away" width="300" height="450" loading="lazy">
+          <div class="card-body">
+            <h3>Spirited Away</h3>
+            <p class="meta">Animation / Fantasy &middot; PG</p>
+            <a class="btn" href="booking.html?movie=spirited-away">Book Now</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- directors spotlight -->
+    <section class="band" aria-labelledby="dir-h">
+      <div class="container section">
+        <h2 id="dir-h">Director spotlight</h2>
+        <p>This season we celebrate two modern masters. <strong>Christopher Nolan</strong> brings mind-bending spectacle with <em>Inception</em>, <em>The Dark Knight</em>, <em>Interstellar</em> and <em>Oppenheimer</em>, while <strong>Martin Scorsese</strong> returns with the crime classics <em>Goodfellas</em> and <em>The Departed</em>, the family adventure <em>Hugo</em> and the dark comedy <em>The Wolf of Wall Street</em>. <a href="movies.html">Explore the full line-up</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>

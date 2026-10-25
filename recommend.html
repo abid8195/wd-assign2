@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tell CineSwin your genre, age group and viewing preference and get matching movie recommendations.">
+  <meta name="author" content="Abid Us Sobhan">
+  <title>Recommendations | CineSwin</title>
+  <!-- single external stylesheet shared by every page -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- all JavaScript lives in one file; deferred so the DOM exists when it runs -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- site header with logo and primary navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="CineSwin film reel logo" width="48" height="48">
+        <span>CineSwin</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="recommend.html" class="current" aria-current="page">Recommend</a></li>
+          <li><a href="booking.html">Book Tickets</a></li>
+          <li><a href="watchlist.html">Watchlist<span class="badge" id="watch-count" hidden>0</span></a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Movie Recommendations</h1>
+        <p class="lead">Answer three quick questions and we will match you with the best movies for tonight.</p>
+      </div>
+    </section>
+
+    <section class="container section narrow" aria-labelledby="rec-form-h">
+      <h2 id="rec-form-h">Your preferences</h2>
+      <form id="recommend-form" action="#" method="get" novalidate>
+        <div class="field">
+          <label for="genre">Preferred genre</label>
+          <select id="genre" name="genre" aria-describedby="genre-error">
+            <option value="">Choose a genre&hellip;</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Animation">Animation</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Crime">Crime</option>
+            <option value="Family">Family</option>
+          </select>
+          <span class="error" id="genre-error" role="alert"></span>
+        </div>
+
+        <fieldset class="field">
+          <legend>Age group</legend>
+          <label class="inline"><input type="radio" name="age" value="child"> Child (under 13)</label>
+          <label class="inline"><input type="radio" name="age" value="teen"> Teen (13&ndash;17)</label>
+          <label class="inline"><input type="radio" name="age" value="adult"> Adult (18+)</label>
+          <span class="error" id="age-error" role="alert"></span>
+        </fieldset>
+
+        <div class="field">
+          <label for="viewing">Viewing preference</label>
+          <select id="viewing" name="viewing" aria-describedby="viewing-error">
+            <option value="">Who are you watching with?</option>
+            <option value="family">Family</option>
+            <option value="date">Date Night</option>
+            <option value="friends">Friends</option>
+            <option value="solo">Solo</option>
+          </select>
+          <span class="error" id="viewing-error" role="alert"></span>
+        </div>
+
+        <p><button type="submit" class="btn">Recommend Movies</button></p>
+      </form>
+    </section>
+
+    <!-- results are filled in by script.js -->
+    <section class="container section" id="results" aria-labelledby="results-h" hidden>
+      <h2 id="results-h">Recommended for you</h2>
+      <p id="results-summary" aria-live="polite"></p>
+      <div class="grid grid-3" id="results-grid"></div>
+    </section>
+  </main>
+
+  <!-- site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CineSwin &ndash; COS10005 Web Development Assignment 2 by Abid Us Sobhan (s103802241).</p>
+      <p>Source code: <a href="https://github.com/Abid8195/wd-assign2">github.com/Abid8195/wd-assign2</a>. Poster and banner images are original artwork made for this project; movie titles belong to their respective studios.</p>
+    </div>
+  </footer>
+</body>
+</html>
